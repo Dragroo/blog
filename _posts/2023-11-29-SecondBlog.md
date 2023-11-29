@@ -4,7 +4,7 @@ author: Dragroo
 title: 使用tar压缩和解压缩文件
 ---
 ### 使用tar压缩和解压缩文件
-1. 使用tar压缩文件
+#### 1. 使用tar压缩文件
 
 ```bash
 tar -zcvf test.tar.gz ./test/
@@ -18,7 +18,7 @@ tar -zcvf test.tar.gz ./test/
 tar -cvf test.tar ./test/
 ```
 
-2. 使用tar解压文件
+#### 2. 使用tar解压文件
 
 ```bash
 tar -xzvf test.tar.gz  
