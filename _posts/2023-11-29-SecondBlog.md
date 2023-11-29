@@ -2,7 +2,7 @@
 layout: post
 author: Dragroo
 title: 使用tar压缩和解压缩文件
-
+tag: 传家小技巧
 ---
 tar命令压缩与解压缩
 ### 使用tar压缩和解压缩文件
