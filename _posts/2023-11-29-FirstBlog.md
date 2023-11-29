@@ -2,6 +2,7 @@
 layout: post
 author: Dragroo
 title: 打印CSDN文章
+tag: 传家小技巧
 ---
 ### 打印CSDN文章，删除不需要的元素
 1. 点击网页右键-检查-点击控制台，粘贴下面的代码
