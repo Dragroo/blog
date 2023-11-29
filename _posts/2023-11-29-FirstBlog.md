@@ -1,5 +1,5 @@
 ---
 layout: post
-title: You're up and running!
+title: A blog
 ---
 ## 这是第一篇github上的博客
