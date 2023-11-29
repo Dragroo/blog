@@ -527,7 +527,7 @@
   }
   @media screen and (min-width: 1100px) {
     .wrapper {
-      max-width: calc(1100px - (2rem * 2));
+      max-width: fit-content;
       padding-right: 2rem;
       padding-left: 2rem;
     }
