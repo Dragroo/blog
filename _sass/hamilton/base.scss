@@ -197,7 +197,7 @@ ul.task-list {
   padding-left: $spacing-unit / 2;
 
   @media screen and (min-width: $on-large) {
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: fit-content;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
   }
