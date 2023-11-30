@@ -33,9 +33,9 @@ layout: default
           {%- endif -%}
         </p>
         <!-- 注释home页显示博客具体内容的功能 -->
-        <!-- {%- if post.show_excerpts != false -%}
+        {%- if post.show_excerpts != false -%}
           <div class="post-excerpt">{{ post.excerpt | strip_html }}</div>
-        {%- endif -%} -->
+        {%- endif -%}
       </li>
       {%- endfor -%}
     </ul>
