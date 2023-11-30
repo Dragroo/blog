@@ -189,7 +189,7 @@ ul.task-list {
 /**
  * Wrapper
  */
-.wrapper {
+.site-body.wrapper {
   max-width: calc(#{$content-width} - (#{$spacing-unit}));
   margin-right: auto;
   margin-left: auto;
@@ -201,4 +201,11 @@ ul.task-list {
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
   }
+}
+.wrapper:first-child {
+  max-width: calc(100%-(#{$spacing-unit}));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
 }
