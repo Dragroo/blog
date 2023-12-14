@@ -15,7 +15,7 @@ category: 技术
 #### 关于任务2的疑问
 除了边框相关的样式应当在`.box`选择器中修改外，其余的文字居中和背景设置应当都在`h2`选择器中完成（右边三个星星的高度和h2的高度是一样的）。
 #### 答案如下
-```javascript
+```css
 .box {
     border: 5px solid lightblue;
     border-top-left-radius: 20px;
