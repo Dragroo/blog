@@ -40,4 +40,6 @@ tbody tr:nth-child(2n-1){
  background-color:rgb(238, 238, 238);
 }
 ```
+这里需要注意的：
+1. 要为table的`border-collapse`设置`collapse`值，否则每个单元格的边框都是单独分开的，没办法给某一行设置边框
 
