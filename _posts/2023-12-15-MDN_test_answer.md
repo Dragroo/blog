@@ -6,7 +6,7 @@ tag: 前端
 category: 技术
 ---
 ## CSS
-### 1. [技能测试：表格](https://www.imooc.com/ '技能测试：表格')
+### 1. [技能测试：表格](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Tables_tasks '技能测试：表格')
 答案：
 
 ```css
