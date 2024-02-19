@@ -27,7 +27,7 @@ tar -xzvf test.tar.gz
 ```
 该命令表示把后缀为.tar.gz的文件解压到当前文件夹下。
 
-如果压缩文件的后缀是.tar，没有gz，则使用命令:
+如果压缩文件的后缀是.tar，没有gz（或为tar.xz），则使用命令:
 ```bash
 tar -xvf test.tar
 ```
