@@ -13,7 +13,7 @@ tag: Leetcode
 3. 确定状态转移方程，当背包容量可以装下第i件物品，即可以选择放不放第i件物品
 - 不放，则背包内物品价值`dp[i][j]=dp[i-1][j]`
 - 放，此时背包容量减少，`dp[i][j]=dp[i-1][j-wight[i]]+value[i]`
-所以dp[i][j]=max(dp[i-1][j],dp[i-1][j-wight[i]]+value[i])
+所以`dp[i][j]=max(dp[i-1][j],dp[i-1][j-wight[i]]+value[i])`
 遍历顺序如下：
 
 ![背包遍历](..\images\0318\背包遍历.gif)
