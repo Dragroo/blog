@@ -1,3 +1,10 @@
+---
+layout: post
+author: Dragroo
+title: 关于使用SSH进行流量转发二三事
+tag: 传家小技巧
+---
+
 # 关于使用SSH进行流量转发二三事
 
 ## 前言
