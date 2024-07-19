@@ -54,7 +54,7 @@ ssh -R remote_proxy_port:localhost:local_proxy_port user_name@remote_ip -p remot
 
 ~~大部分推荐的是tsocks，但tsocks已经是十几年前的东西了，实测也不能用~~
 
-（以下参考会长君的[博客](https://cloud.tencent.com/developer/article/2288071)）
+**第一种方法**（以下参考会长君的[博客](https://cloud.tencent.com/developer/article/2288071)）
 
 如果你是Ubuntu系统，你应该可以执行下面命令之一进行安装
 
@@ -87,6 +87,22 @@ socks5  连接IP地址 连接端口 用户名 密码(用户名和密码一般用
 # 克隆项目库
 https://github.com/haad/proxychains.git
 cd proxychains
+```
+
+**问题**：为了避免遇到这个错误:
+```bash
+[proxychains] DLL init ping: symbol lookup error: /usr/local/lib/libproxychains4.so: undefined symbol: dlsym
+```
+在编译之前，你应该按照这个[issue](https://github.com/haad/proxychains/issues/153)提出的解决方案，即将`configure`文件108行的
+```bash
+echo OS_LDFLAGS=-pthread -ldl -Wl,--no-as-needed>>config.mak
+```
+改成
+```bash
+echo OS_LDFLAGS=-pthread -Wl,--no-as-needed -ldl>>config.mak
+```
+编译，逐行执行
+```bash
 # 下面为官方源码编译的过程
 # needs a working C compiler, preferably gcc
 ./configure
@@ -108,10 +124,15 @@ proxychains looks for configuration in the following order:
 
 - /etc/proxychains.conf
 
-你需要指定PROXYCHAINS_CONF_FILE
+实际上在编译完成后，我在这几个目录里都没有找到`proxychains.conf`这个文件，我尝试了第一种方法，但似乎proxychains命令已经指向我编译后的程序，无法改变。于是我又将安装的apt包使用`apt remove`卸载了，但留下了`/etc/proxychains.conf`，我于是指定PROXYCHAINS_CONF_FILE(指令在下面)，然后按照第一种方法修改配置文件，成功了。
+
+(实际上在编译后的dist目录下，我找到了这个文件，你可以试着配置一下，然后按照下面的方式指定，文件的路径需要修改)
 
 ```bash
-#下面是一个例子，仅对当前终端生效
-export PROXYCHAINS_CONF_FILE = /etc/proxychains.conf
+#下面是一个例子，仅对当前终端生效（也就是说，每开一次终端，你都要执行这个命令）
+export PROXYCHAINS_CONF_FILE=/etc/proxychains.conf
 ```
-后面就可以愉快使用了
+后面就可以愉快使用了，使用`proxychains 要执行的命令`即可，比如：
+```bash
+proxychains git https://github.com/freeCodeCamp/freeCodeCamp.git 
+```
