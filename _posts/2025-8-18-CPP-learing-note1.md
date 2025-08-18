@@ -102,6 +102,25 @@ int * const pa = &a;
 
 ```
 
+### 顶层const和底层const
+
+1. 顶层const是指对变量（包含指针）本身const属性的修饰
+```cpp
+const int a = 0; //对变量修饰
+int * const pa = &a; //对指针修饰
+```
+
+2. 底层const是指对指针或引用指向内容不可修改
+```cpp
+int a = 0;
+const int *pa = a;
+int b;
+const int &rb = b;
+```
+
+**总结**：
+- 顶层const：对象是常量（值不能改），修饰“变量本身”或“指针本身”。
+- 底层const：指向的内容是常量（内容不能改），修饰“指针指向的内容”或“引用”。
 ### 总结
 const的位置决定了指针指向的变量是否可以被修改或者指针本身可以被修改。注意定义const相关的内容必须**当即赋值**，否则没有意义
 
@@ -353,3 +372,42 @@ arr.size();          // 返回10
 ### 五、一句话理解
 
 模板实例化传的参数是类型，而非类型模板参数实例化传的是具体的值
+
+## 类型别名与类型推导
+
+### 类型别名
+
+```cpp
+#include <iostream>
+//下面的三种方式都可以定义类型别名
+typedef int num;
+// using num = int;
+// #define num int
+int main(){
+    num a = 5;
+    num b = 10;
+    num c = a + b;
+    std::cout << "The sum is: " << c << std::endl;
+    return 0;
+}
+```
+
+### auto类型推导
+```cpp
+int a = 0;
+auto b=0; //b为int类型
+auto c=a; //int
+auto d=0, *pd = &d;//d-int, pd-int*
+```
+`auto`关键字会去除顶层`const`（**`auto&` 例外**）
+
+```cpp
+const int a = 0;
+auto b = a;//int
+const int * pa =&a;
+auto pb = pa; //const int *
+auto& ra = a; //const int &
+```
+
+### decltype类型推导
+规则较为复杂
