@@ -19,7 +19,7 @@ from tqdm import tqdm
 
 # 初始化DeepSeek API客户端
 client = OpenAI(
-    api_key="sk-61758a71456547bb9a920f280539f7cf",
+    api_key="sk-xxx",
     base_url="https://api.deepseek.com"
 )
 
