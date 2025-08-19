@@ -410,4 +410,4 @@ auto& ra = a; //const int &
 ```
 
 ### decltype类型推导
-规则较为复杂，可看[decltype类型推导](./2025-8-18-decltype.md)
+规则较为复杂，可看[decltype类型推导](../decltype)
