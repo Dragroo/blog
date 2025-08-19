@@ -3,7 +3,7 @@ layout: post
 author: Dragroo
 title: 泛型编程-参数
 tag: CPP
-catorgory: 技术
+catergory: 技术
 ---
 
 # 模板特化与非类型模板参数详解

@@ -3,7 +3,7 @@ layout: post
 author: Dragroo
 title: decltype类型推导
 tag: CPP
-catorgory: 技术
+catergory: 技术
 ---
 
 # decltype 类型推导规则详解

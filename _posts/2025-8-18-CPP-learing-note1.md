@@ -3,7 +3,7 @@ layout: post
 author: Dragroo
 title: CPP学习笔记1
 tag: CPP
-catorgory: 技术
+catergory: 技术
 ---
 
 ## 重定义
